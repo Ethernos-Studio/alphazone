@@ -1,0 +1,753 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS变量定义 */
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #1a1a1a;
+    --accent-bg: #2a2a2a;
+    --primary-text: #ffffff;
+    --secondary-text: #cccccc;
+    --accent-text: #ff6b35;
+    --warning-text: #ff4444;
+    --border-color: #333333;
+    --glow-color: #ff6b35;
+    --grid-gap: 0;
+    --border-radius: 0;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 全局样式 */
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 2%;
+}
+
+/* 头部样式 */
+.header {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    border-bottom: 2px solid var(--border-color);
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 0%, rgba(255, 107, 53, 0.1) 50%, transparent 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 107, 53, 0.05) 2px,
+            rgba(255, 107, 53, 0.05) 4px
+        );
+    pointer-events: none;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.main-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, var(--primary-text), var(--accent-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--accent-text);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-text);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* 主要内容区域 */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+/* 通用区域样式 */
+section {
+    margin-bottom: 4rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-text);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.section-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-text), transparent);
+}
+
+/* 背景故事区域 */
+.story-content {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    position: relative;
+}
+
+.story-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-text), transparent);
+}
+
+.story-content p {
+    margin-bottom: 1rem;
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.story-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* 组织介绍区域 */
+.organizations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.org-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.org-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-text);
+}
+
+.org-header {
+    margin-bottom: 1rem;
+}
+
+.org-header h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-text);
+    margin-bottom: 0.25rem;
+}
+
+.org-subtitle {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    font-weight: 300;
+}
+
+.org-card p {
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 时间线区域 */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-text), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-text);
+    border: 2px solid var(--primary-bg);
+    transform: translateX(-50%);
+}
+
+.timeline-date {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-text);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-text);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--secondary-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 状态信息区域 */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.status-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+.status-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.status-card h4 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-text);
+    margin-bottom: 0.5rem;
+}
+
+.status-card p {
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+}
+
+/* 项目支持区域样式 */
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.support-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.support-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.support-card h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-text);
+    margin-bottom: 0.5rem;
+}
+
+.support-card p {
+    color: var(--secondary-text);
+    margin-bottom: 1rem;
+}
+
+.support-link {
+    display: inline-block;
+    background: var(--accent-text);
+    color: var(--primary-bg);
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid var(--accent-text);
+}
+
+.support-note {
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    opacity: 0.8;
+}
+
+/* 开发招募区域样式 */
+.recruitment-content > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+.recruitment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.recruitment-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    position: relative;
+}
+
+.recruitment-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.recruitment-card h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-text);
+    margin-bottom: 1rem;
+}
+
+.recruitment-card ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.recruitment-card li {
+    color: var(--secondary-text);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.recruitment-card li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-text);
+}
+
+.recruitment-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-bg);
+    color: var(--secondary-text);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+.recruitment-status.urgent {
+    background: rgba(255, 68, 68, 0.2);
+    color: var(--warning-text);
+    border-color: var(--warning-text);
+}
+
+.recruitment-contact {
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+}
+
+.recruitment-contact p {
+    color: var(--accent-text);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* 底部样式 */
+.footer {
+    background: var(--secondary-bg);
+    border-top: 2px solid var(--border-color);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer-links span {
+    color: var(--border-color);
+}
+
+.footer-content p {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.footer-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--accent-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.warning-icon {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.3; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    .organizations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recruitment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 1rem;
+    }
+    
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-item::before {
+        left: -1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content,
+    .footer-content {
+        padding: 0 1rem;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .story-content,
+    .org-card,
+    .status-card,
+    .support-card,
+    .recruitment-card {
+        padding: 1.5rem;
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-text);
+    border-radius: 0;
+}
+
+
+/* 选中文本样式 */
+::selection {
+    background: var(--accent-text);
+    color: var(--primary-bg);
+}
+
+/* 加载动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+section:nth-child(6) { animation-delay: 0.6s; }
+
+/* 音乐播放器样式 */
+.music-player {
+    margin-top: 2rem;
+    padding: 0.75rem 1rem;
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.music-btn {
+    background: var(--accent-text);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    min-width: 60px;
+}
+
+.music-btn:hover {
+    opacity: 0.9;
+}
+
+.mute-btn {
+    background: var(--accent-bg);
+    color: var(--secondary-text);
+    border: 1px solid var(--border-color);
+}
+
+.music-title {
+    color: var(--accent-text);
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.volume-slider {
+    width: 80px;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--border-color);
+    border-radius: 3px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-text);
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-text);
+    cursor: pointer;
+    border: none;
+}
+
+.volume-icon {
+    color: var(--accent-text);
+    font-size: 1rem;
+}
+
+.pause-icon {
+    display: none;
+}
+
+.playing .play-icon {
+    display: none;
+}
+
+.playing .pause-icon {
+    display: inline;
+}
+
+/* 响应式音乐播放器 */
+@media (max-width: 768px) {
+    .music-controls {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .music-title {
+        font-size: 0.8rem;
+    }
+    
+    .volume-slider {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-controls {
+        gap: 0.5rem;
+    }
+    
+    .music-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 50px;
+    }
+    
+    .music-title {
+        font-size: 0.75rem;
+    }
+    
+    .volume-slider {
+        width: 50px;
+    }
+}
