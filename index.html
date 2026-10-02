@@ -1,240 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALPHA ZONE - 独立游戏项目</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c25">
+  <meta name="description" content="Alpha Zone 独立游戏世界观概念站。进入 EPUN 战档，探索被世界放弃的极寒黑域、完整战争时间线与雪鸦广播。">
+  <title>ALPHA ZONE — 此处无未来</title>
+  <link rel="icon" href="assets/az-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/BigShoulders-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="story-data.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- 头部区域 -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="main-title">ALPHA ZONE</h1>
-                <div class="subtitle">独立游戏项目 - 阿尔法战区</div>
-                <div class="status-indicator">
-                    <span class="status-dot"></span>
-                    <span class="status-text">开发中</span>
-                </div>
-            </div>
-        </header>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9v6h4l5 4V5L7 9H3Zm13-1c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></symbol>
+    <symbol id="i-cross" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 10 7-10 7Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  </defs></svg>
 
-        <!-- 主要内容区域 -->
-        <main class="main-content">
-            <!-- 游戏介绍区域 -->
-            <section class="story-section">
-                <div class="section-header">
-                    <h2>游戏介绍</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="story-content">
-                    <p>《Alpha Zone》是一款以近未来核战废墟为背景的独立游戏项目。在这个被净化世界组织摧毁的阿尔法战区中，玩家将扮演幸存者，在资源匮乏、危机四伏的无人地带中求生存。</p>
-                    <p>游戏融合了策略、生存、探索等多种元素，玩家需要组建自己的势力，搜刮稀缺资源，与其他幸存者势力展开激烈的资源争夺战。</p>
-                    <p>在这个"开火优先于说话，沉默优先于呼救"的世界中，每一个决定都可能关乎生死。</p>
-                </div>
-            </section>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#top" aria-label="Alpha Zone 首页"><img src="assets/az-mark.svg" alt="" width="38" height="38"><span>ALPHA ZONE<small>独立游戏 · 世界观档案</small></span></a>
+    <nav class="desktop-nav" aria-label="主导航"><a href="#world">黑域纪实</a><a href="#territory">封锁区域</a><a href="#archive">战争档案</a><a href="#radio">雪鸦广播</a></nav>
+    <div class="header-actions"><span class="language-label">简中 / ZH</span><a class="header-cta" href="#archive">访问档案 <svg><use href="#i-diagonal"/></svg></a><button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="打开导航"><span></span><span></span></button></div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="移动导航" hidden><a href="#world">黑域纪实</a><a href="#territory">封锁区域</a><a href="#archive">战争档案</a><a href="#radio">雪鸦广播</a></nav>
+  </header>
 
-            <!-- 世界观背景 -->
-            <section class="story-section">
-                <div class="section-header">
-                    <h2>世界观背景</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="story-content">
-                    <p>在DeWorld成立后，他们多次试图干扰科学实验，但全部都失败了。后来，他们收购了EFGH，并进行了很多高级武器的研究。</p>
-                    <p>很快，他们成功组建了一支全世界最先进的武装力量，并对俄罗斯东北部展开侵略。他们几乎毫不费力地到达了俄罗斯中部，但在联合国五常联军的压制下被迫回到东北部。</p>
-                    <p>随后，他们对美国的阿拉斯加州发动袭击，这次的进攻异常艰难，因为所有人都知道他们会来袭击，布置了强大的防线。DeWorld受不了了，投放了一枚氢弹，整个迪纳科山区域变为一片废墟。</p>
-                    <p>被DeWorld占领的区域就叫「ALPHA ZONE」（阿尔法战区）。DeWorld占领区域后并没有宣布主权，而是不断轰炸和烧杀抢掠，后来他们转入地下，阿尔法战区就变成无人敢涉足的死亡地带。</p>
-                </div>
-            </section>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero-landscape" src="assets/alpha-zone-landscape.webp" alt="冰封山谷中，废弃的通信设施矗立于雪原，一名孤独的幸存者走向远方" fetchpriority="high" width="2400" height="1500">
+      <div class="hero-shade"></div><canvas id="snow" class="snow" aria-hidden="true"></canvas>
+      <div class="hero-topline"><span><i class="status-dot"></i> EPUN 战档司 / 2031.09.24</span><span>北境封锁区 <b>///</b> 访问等级 L3</span></div>
+      <div class="hero-wordmark"><h1 id="hero-title">ALPHA ZONE<span class="title-trademark">™</span></h1><div class="wordmark-caption"><span>此处无未来</span><span>A world abandoned.</span><span>2031</span></div></div>
+      <div class="hero-bottom">
+        <div class="hero-message"><p class="overline">世界没有毁灭。它只是放弃了这里。</p><h2>欢迎来到<br>无人认领的明天。</h2><div class="hero-buttons"><a class="button button-orange" href="#territory">进入封锁区 <svg><use href="#i-diagonal"/></svg></a><button class="button button-glass" id="hero-broadcast"><svg><use href="#i-play"/></svg> 接收雪鸦广播</button></div></div>
+        <div class="hero-coordinates"><svg class="crosshair" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="18"/><path d="M32 0v20m0 24v20M0 32h20m24 0h20"/><circle cx="32" cy="32" r="2"/></svg><span>61°02′15″N<br>150°36′18″W</span><small>核爆记录坐标 / D-E1187</small></div>
+      </div>
+      <div class="hero-footer"><span><i class="status-dot orange"></i> 区域状态：持续封锁</span><a href="#world">向下探索 <span class="scroll-line"></span></a><button class="sound-control" data-sound aria-pressed="false"><svg><use href="#i-sound"/></svg><span>环境音关闭</span></button></div>
+    </section>
 
-            <!-- 游戏特色 -->
-            <section class="organizations-section">
-                <div class="section-header">
-                    <h2>游戏特色</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="organizations-grid">
-                    <div class="org-card">
-                        <div class="org-header">
-                            <h3>硬核生存</h3>
-                            <span class="org-subtitle">极限生存挑战</span>
-                        </div>
-                        <p>在核废墟和极寒环境中求生，管理有限的资源，应对辐射、饥饿、寒冷等多重生存威胁。</p>
-                    </div>
-                    <div class="org-card">
-                        <div class="org-header">
-                            <h3>势力争夺</h3>
-                            <span class="org-subtitle">策略性资源战争</span>
-                        </div>
-                        <p>组建和管理自己的势力，与其他幸存者集团展开激烈的资源争夺战，体验真实的末日政治。</p>
-                    </div>
-                    <div class="org-card">
-                        <div class="org-header">
-                            <h3>动态世界</h3>
-                            <span class="org-subtitle">沙盒式探索</span>
-                        </div>
-                        <p>探索广阔的阿尔法战区，发现隐藏的秘密，遭遇随机事件，每个玩家的体验都独一无二。</p>
-                    </div>
-                </div>
-            </section>
+    <div class="warning-strip" aria-label="世界观警示"><span class="warning-symbol">!</span><span>越过封锁线，即视为接受「无救援协议」。</span><span class="warning-en">NO RESCUE BEYOND THIS POINT</span><span class="strip-slashes" aria-hidden="true"></span></div>
 
-            <!-- 开发时间线 -->
-            <section class="timeline-section">
-                <div class="section-header">
-                    <h2>开发计划</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2025年Q4</div>
-                        <div class="timeline-content">
-                            <h4>项目立项</h4>
-                            <p>《Alpha Zone》游戏概念确定，世界观设定完成，核心玩法设计启动</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2026年Q1</div>
-                        <div class="timeline-content">
-                            <h4>原型开发</h4>
-                            <p>游戏原型制作完成，基础系统搭建，核心玩法验证</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2026年Q2</div>
-                        <div class="timeline-content">
-                            <h4>团队组建</h4>
-                            <p>开发团队组建，美术资源制作，程序框架搭建</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2026年Q3</div>
-                        <div class="timeline-content">
-                            <h4>持续开发</h4>
-                            <p>游戏内容扩展，系统优化，准备首次测试版本</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="world section-wrap" id="world" aria-labelledby="world-title">
+      <div class="section-kicker"><span class="kicker-symbol">+</span> 来自黑域的记录 <span>EPUN / L3</span></div>
+      <div class="world-grid"><div class="world-headline"><h2 id="world-title">不是末日。<br>是被<span class="outline-word">遗弃</span>之后。</h2><p class="world-en">THE WORLD MOVED ON.<br>YOU DIDN’T.</p></div><div class="world-copy"><p>2028 年，一道核闪抹去了北境的防线。<br>三年后，这片土地被从世界的未来里删除。</p><p>没有政府，没有援军，也没有安全区。只有极寒、核废墟，以及一百多支为了下一口干净的水而开火的武装。</p><p>DeWorld 潜入了地下。EPUN 留在了边界。<br>剩下的人，把活到明天当作唯一的立场。</p><a class="text-link" href="#archive">这片土地是如何失去未来的 <svg><use href="#i-arrow"/></svg></a></div></div>
+      <div class="world-facts"><div><strong>104</strong><span>支流民武装<small>2030 年战档记录</small></span></div><div><strong>1,842</strong><span>起有记录交火<small>过去 12 个月</small></span></div><div><strong>0</strong><span>公里推进<small>「雪杉行动」72 小时</small></span></div><p>开火优先于说话。<br>沉默优先于呼救。</p></div>
+    </section>
 
-            <!-- 项目状态 -->
-            <section class="status-section">
-                <div class="section-header">
-                    <h2>项目状态</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="status-grid">
-                    <div class="status-card">
-                        <div class="status-icon">🎮</div>
-                        <h4>当前阶段</h4>
-                        <p>核心开发阶段</p>
-                    </div>
-                    <div class="status-card">
-                        <div class="status-icon">🚀</div>
-                        <h4>开发进度</h4>
-                        <p>基础框架完成，内容制作中</p>
-                    </div>
-                    <div class="status-card">
-                        <div class="status-icon">👥</div>
-                        <h4>团队规模</h4>
-                        <p>独立开发团队，志愿者招募中</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <section class="territory" id="territory" aria-labelledby="territory-title">
+      <div class="section-wrap territory-inner"><div class="section-kicker"><span class="kicker-symbol">+</span> 封锁区域 <span>地表情报 / 部分缺失</span></div><div class="section-heading"><h2 id="territory-title">地图还在。<br>秩序已经不在。</h2><p>选择一个信号节点。<br>看清这片土地留下了什么。</p></div>
+        <div class="map-layout"><div class="map-surface" id="map-surface"><img src="assets/zone-map.svg" alt="阿拉斯加与加拿大北境封锁区的艺术化地形示意" width="1100" height="800" loading="lazy"><div class="map-top"><span><i class="status-dot orange"></i> ALPHA EXCLUSION ZONE</span><span>北 ↑</span></div><div class="map-coast-label">白令海</div><div class="map-zone-label">ALPHA<br>ZONE</div><div class="map-markers" id="map-markers"></div><div class="map-bottom"><span>世界观示意 / 非精确地理边界</span><span class="map-scale">0 ━━━━━ 200 km</span></div></div>
+          <aside class="location-panel" aria-labelledby="location-title"><div class="location-tabs" id="location-tabs" aria-label="选择区域"></div><div id="location-detail" aria-live="polite"></div></aside></div>
+        <div class="map-legend"><span><i class="legend-ring"></i> 已知事件节点</span><span><i class="legend-line"></i> EPUN 封锁线</span><span><i class="legend-hatch"></i> 未确认区域</span><span class="map-note">地下井网位置仅为示意，准确坐标未知。</span></div>
+      </div>
+    </section>
 
-        <!-- 项目支持区域 -->
-        <section class="support-section">
-            <div class="section-header">
-                <h2>支持项目</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="support-grid">
-                <div class="support-card">
-                    <div class="support-icon">💰</div>
-                    <h3>爱发电支持</h3>
-                    <p>支持《Alpha Zone》项目的持续开发</p>
-                    <a href="https://afdian.com/a/dhjs0000" target="_blank" class="support-link">前往支持</a>
-                </div>
-                <div class="support-card">
-                    <div class="support-icon">📧</div>
-                    <h3>邮箱联系</h3>
-                    <p>studio@ethernos.cn</p>
-                    <span class="support-note">商务合作与项目咨询</span>
-                </div>
-                <div class="support-card">
-                    <div class="support-icon">💬</div>
-                    <h3>QQ联系</h3>
-                    <p>3110197220</p>
-                    <span class="support-note">快速沟通渠道</span>
-                </div>
-            </div>
-        </section>
+    <section class="archive section-wrap" id="archive" aria-labelledby="archive-title">
+      <div class="section-kicker"><span class="kicker-symbol">+</span> 战争档案 <span>2025—2031 / 完整广播版</span></div><div class="section-heading"><h2 id="archive-title">一场被写进<br>财报的末日。</h2><p>从一笔债务，到一片黑域。<br><span id="event-count">21</span> 份记录，没有一份能改变结局。</p></div>
+      <div class="phase-nav" id="phase-nav" role="group" aria-label="选择档案阶段"></div>
+      <div class="archive-layout"><div class="archive-index"><div class="phase-summary"><span id="phase-period"></span><h3 id="phase-title"></h3><p id="phase-intro"></p></div><div id="event-list" class="event-list" aria-label="事件列表"></div></div><article class="event-detail" id="event-detail" aria-labelledby="event-title"><div id="event-content" aria-live="polite"></div><div class="event-controls"><button id="previous-event" class="icon-button" aria-label="上一条记录"><svg class="reverse"><use href="#i-arrow"/></svg></button><span id="event-position"></span><button id="next-event" class="icon-button" aria-label="下一条记录"><svg><use href="#i-arrow"/></svg></button><button id="share-event" class="share-event">复制记录链接 <svg><use href="#i-diagonal"/></svg></button></div></article></div>
+      <div class="archive-footnote"><span>原始战档与同期播报均按世界观原稿收录；记录中的矛盾与偏差未作改写。</span><button id="download-archive">下载完整战档 <svg><use href="#i-download"/></svg></button></div>
+    </section>
 
-        <!-- 开发招募区域 -->
-        <section class="recruitment-section">
-            <div class="section-header">
-                <h2>加入开发</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="recruitment-content">
-                <p>《Alpha Zone》项目正在招募开发志愿者，欢迎有志之士加入我们的团队。</p>
-                <div class="recruitment-grid">
-                    <div class="recruitment-card">
-                        <div class="recruitment-icon">🎨</div>
-                        <h3>美术设计师</h3>
-                        <ul>
-                            <li>角色原画设计</li>
-                            <li>场景概念设计</li>
-                            <li>UI界面设计</li>
-                            <li>物体与贴图</li>
-                        </ul>
-                        <span class="recruitment-status urgent">急招</span>
-                    </div>
-                </div>
-                <div class="recruitment-contact">
-                    <p>感兴趣的朋友请通过上述联系方式与我们取得联系！</p>
-                </div>
-            </div>
-        </section>
+    <section class="radio" id="radio" aria-labelledby="radio-title"><div class="section-wrap radio-inner"><div class="radio-copy"><div class="section-kicker"><span class="kicker-symbol">+</span> EPUN 残存低频信道</div><h2 id="radio-title">如果你听见，<br>不要回答。</h2><p>光纤已经沉默。<br>「雪鸦」还在重复世界最后的消息。</p><span class="radio-disclaimer">广播文字为虚构战档。声音为本地合成的电台环境音，非语音播报。</span></div>
+        <div class="receiver"><div class="receiver-head"><div class="raven-brand"><svg viewBox="0 0 42 32" aria-hidden="true"><path d="m2 4 17 7L36 2l-8 14 12 5-21 2-8 8 3-13Z" fill="currentColor"/></svg><span>雪鸦<small>Snow Raven receiver</small></span></div><span class="receiver-status" id="receiver-status"><i class="status-dot"></i> 待机</span></div><div class="receiver-screen"><div class="frequency-row"><span>档案频道 <b id="channel-label">03</b></span><span class="frequency"><strong id="frequency-value">087.6</strong><small>kHz</small></span></div><canvas id="waveform" width="720" height="100" aria-hidden="true"></canvas><div class="screen-bottom"><span id="radio-record-date">2028.08.05</span><span>历史广播 / 非实时信号</span></div></div><label class="tuner-label" for="radio-tuner"><span>旋动频段，接收历史</span><span>模拟调谐</span></label><input id="radio-tuner" type="range" min="0" max="4" step="1" value="2" aria-valuetext="频道3：核闪"><div class="tuner-ticks" aria-hidden="true"><span>081.2</span><span>084.5</span><span>087.6</span><span>091.3</span><span>096.0</span></div><div class="radio-transcript" aria-live="polite"><span>接收文本</span><p id="radio-transcript"></p></div><div class="receiver-controls"><button class="button button-orange" data-sound aria-pressed="false"><svg><use href="#i-sound"/></svg><span>启用环境音</span></button><label class="volume-control" for="volume">音量<input id="volume" type="range" min="0" max="100" value="25"></label></div></div>
+      </div></section>
 
-        <!-- 底部区域 -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="https://afdian.com/a/dhjs0000" target="_blank">爱发电支持</a>
-                    <span>|</span>
-                    <a href="mailto:studio@ethernos.cn">邮箱联系</a>
-                    <span>|</span>
-                    <a href="http://wpa.qq.com/msgrd?v=3&uin=3110197220&site=qq&menu=yes" target="_blank">QQ联系</a>
-                </div>
-                <p>&copy; 2026 Alpha Zone 独立游戏项目 | 开发中</p>
-                <div class="footer-warning">
-                    <span class="warning-icon">🎮</span>
-                    <span>独立游戏开发中，敬请期待</span>
-                </div>
-                <div class="music-player">
-                    <audio id="background-music" loop>
-                        <source src="assets/music/restricted zone禁区.mp3" type="audio/mpeg">
-                        您的浏览器不支持音频播放。
-                    </audio>
-                    <div class="music-controls">
-                        <button id="play-pause-btn" class="music-btn">
-                            <span class="play-icon">▶</span>
-                            <span class="pause-icon">⏸</span>
-                        </button>
-                        <span class="music-title">ALPHA ZONE OST</span>
-                        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.1" value="0.5">
-                        <span class="volume-icon">🔊</span>
-                        <button id="mute-btn" class="music-btn mute-btn">静音</button>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
+    <section class="end-section section-wrap"><div class="end-topline"><span>EPUN / 战档司</span><span>2031.09.24 — 06:00</span><span>档案结束 / 黑域仍在</span></div><p class="end-statement">他们说，此处无未来。</p><h2>你还在这里。</h2><a class="button button-orange" href="#archive" id="read-all">重新打开战档 <svg><use href="#i-diagonal"/></svg></a><div class="end-wordmark" aria-hidden="true">ALPHA ZONE</div></section>
+  </main>
+  <footer class="site-footer"><a href="#top" class="footer-brand"><img src="assets/az-mark.svg" alt="" width="28" height="28"> ALPHA ZONE</a><p>独立游戏世界观概念站。全部组织、战争与播报均为虚构叙事。<br>非真实新闻、非军事资料；页面不代表已公布的游戏玩法或发售计划。</p><a href="#top" class="back-top">返回地表 <svg><use href="#i-diagonal"/></svg></a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><div class="noscript-notice">启用 JavaScript 以浏览互动地图、战争时间线与电台。<a href="assets/alpha-zone-archive.txt">下载完整文字档案</a></div></noscript>
 </body>
 </html>
